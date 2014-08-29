@@ -18,6 +18,10 @@
   "homepage": "https://github.com/Next-Mars/curates",
   "dependencies": {
     "grunt": "^0.4.5",
-    "gulp": "^3.8.7"
+    "gulp": "^3.8.7",
+    "express": "~4.8.6",
+    "knex": "~0.6.22",
+    "mysql": "~2.4.3",
+    "bookshelf": "~0.7.7"
   }
 }
