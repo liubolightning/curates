@@ -48,27 +48,30 @@ db.knex.schema.hasTable('links').then(function (exists) {
   if (!exists) {
     db.knex.schema.createTable('links', function (link) {
       link.increments('l_id').primary();
+      link.integer('c_id');
       link.string('url', 255);
+      link.string('description', 255);
+      link.integer('click_count');
     }).then(function (table) {
       console.log('Created Links Table', table);
     });
   }
 });
 
-//join table, many to many relationship between collections and links
-db.knex.schema.hasTable('links_collections').then(function (exists) {
-  if (!exists) {
-    db.knex.schema.createTable('links_collections', function (linkCollection) {
-      linkCollection.increments('LC_id').primary();
-      linkCollection.integer('c_id');
-      linkCollection.integer('l_id');
-      linkCollection.string('description', 255);
-      linkCollection.integer('click_count');
-    }).then(function(table){
-      console.log("Created Links-Collections table ", table);
-    });
-  }
-});
+// //join table, many to many relationship between collections and links
+// db.knex.schema.hasTable('links_collections').then(function (exists) {
+//   if (!exists) {
+//     db.knex.schema.createTable('links_collections', function (linkCollection) {
+//       linkCollection.increments('LC_id').primary();
+//       linkCollection.integer('c_id');
+//       linkCollection.integer('l_id');
+//       linkCollection.string('description', 255);
+//       linkCollection.integer('click_count');
+//     }).then(function(table){
+//       console.log("Created Links-Collections table ", table);
+//     });
+//   }
+// });
 
 
 module.exports = db;

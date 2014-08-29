@@ -6,7 +6,7 @@ var User = db.Model.extend({
   tableName: 'users',
   hasTimestamps: true,
   collections: function(){
-    return this.hasMany(Collection, 'c_id');
+    return this.hasMany(Collection);
   }
 });
 

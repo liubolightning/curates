@@ -1,11 +1,13 @@
 var db = require('../dbconfig');
-var Link_Collection = require('./linkscollections')
+var Collection = require('./collection');
 
 var Link = db.Model.extend({
   tableName: 'links',
   hasTimestamps: true,
 
-  links: function(){
-    return this.hasMany(Link_Collection, 'l_id');
+  collections: function(){
+    return this.belongsTo(Collection, 'c_id');
   }
 });
+
+module.exports = Link;

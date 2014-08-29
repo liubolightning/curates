@@ -1,6 +1,6 @@
 var db = require('../dbconfig');
 var User = require('./user');
-var Link_Collection = require('./linkscollections')
+var Link = require('./link');
 
 var Collection = db.Model.extend({
   tableName: 'collections',
@@ -9,7 +9,9 @@ var Collection = db.Model.extend({
     return this.belongsTo(User, 'u_id');
   },
 
-  collections: function(){
-    return this.hasMany(Link_Collection, 'c_id');
+  links: function(){
+    return this.hasMany(Link);
   }
 });
+
+module.exports = Collection;
