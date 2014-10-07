@@ -69,4 +69,4 @@ View the project roadmap [here](http://github.com/Next-Mars/curates/milestones)
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines..
